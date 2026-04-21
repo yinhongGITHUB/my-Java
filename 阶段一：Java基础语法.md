@@ -67,12 +67,57 @@ java -version
    source ~/.zshrc
    ```
 
-### 1.2 安装开发工具
+### 1.2 用 jenv 管理多个 JDK 版本（可选）
 
-推荐使用 **IntelliJ IDEA 社区版**（免费）：
+如果你电脑上安装了多个版本的 JDK，可以用 **jenv** 来随时切换（类似 node 的 nvm）。
 
-1. 访问 [https://www.jetbrains.com/idea/download](https://www.jetbrains.com/idea/download) 下载
-2. 安装后新建项目：`File → New Project → Java`，选择 JDK 17
+按顺序执行以下命令完成全部配置：
+
+```bash
+# 1. 安装 jenv
+brew install jenv
+
+# 2. 配置环境变量
+echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(jenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+
+# 3. 安装 JDK 8、21（JDK 17 已安装可跳过）
+brew install --cask temurin@8
+brew install --cask temurin@21
+
+# 4. 将所有版本注册到 jenv
+jenv add $(/usr/libexec/java_home -v 1.8)
+jenv add $(/usr/libexec/java_home -v 17)
+jenv add $(/usr/libexec/java_home -v 21)
+
+# 5. 验证
+jenv versions
+```
+
+**常用命令：**
+
+```bash
+jenv versions          # 查看所有已注册的 JDK 版本
+jenv global 17         # 全局默认使用 JDK 17
+jenv local 1.8         # 仅当前目录使用 JDK 8（会生成 .java-version 文件）
+java -version          # 验证当前版本
+```
+
+> 注意：JDK 8 在 jenv 中版本号显示为 `1.8`，JDK 17 和 21 直接用 `17`、`21`。
+
+---
+
+### 1.3 安装开发工具
+
+使用 **VS Code**，需安装以下两个插件：
+
+1. **Language Support for Java(TM) by Red Hat**：提供 Java 语言支持、代码提示、报错提示等
+2. **Test Runner for Java**：支持运行和调试 JUnit 单元测试
+
+安装方式：打开 VS Code，按 `⇧Shift + ⌘Cmd + X` 打开扩展面板，搜索插件名安装即可。
+
+> 也可以直接搜索安装 **Extension Pack for Java**，会一次性安装所有常用 Java 插件。
 
 ### 1.3 第一个 Java 程序
 
