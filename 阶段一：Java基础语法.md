@@ -110,14 +110,15 @@ java -version          # 验证当前版本
 
 ### 1.3 安装开发工具
 
-使用 **VS Code**，需安装以下两个插件：
+使用 **VS Code**，安装 **Extension Pack for Java** 即可，它包含了所有常用 Java 插件：
 
-1. **Language Support for Java(TM) by Red Hat**：提供 Java 语言支持、代码提示、报错提示等
-2. **Test Runner for Java**：支持运行和调试 JUnit 单元测试
+- Language Support for Java(TM) by Red Hat
+- Debugger for Java
+- Test Runner for Java
+- Maven for Java
+- Project Manager for Java
 
-安装方式：打开 VS Code，按 `⇧Shift + ⌘Cmd + X` 打开扩展面板，搜索插件名安装即可。
-
-> 也可以直接搜索安装 **Extension Pack for Java**，会一次性安装所有常用 Java 插件。
+安装方式：打开 VS Code，按 `⇧Shift + ⌘Cmd + X` 打开扩展面板，搜索 `Extension Pack for Java` 安装即可。
 
 ### 1.3 第一个 Java 程序
 
