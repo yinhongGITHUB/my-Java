@@ -106,6 +106,37 @@ java -version          # 验证当前版本
 
 > 注意：JDK 8 在 jenv 中版本号显示为 `1.8`，JDK 17 和 21 直接用 `17`、`21`。
 
+### 1.3 安装 Maven（项目管理工具）
+
+Maven 是 Java 最常用的项目管理和构建工具，负责依赖管理、自动编译打包等。
+
+**安装方法（推荐 Homebrew）：**
+
+```bash
+brew install maven
+```
+
+安装完成后，验证版本：
+
+```bash
+mvn -version
+# 输出包含 Maven 版本号、Java 版本等信息
+```
+
+**常用命令：**
+
+```bash
+mvn -v                # 查看 Maven 版本
+mvn clean             # 清理项目生成的 target 目录
+mvn compile           # 编译项目
+mvn test              # 运行测试
+mvn package           # 打包（生成 jar/war 文件）
+mvn install           # 安装到本地仓库
+mvn dependency:tree   # 查看依赖树
+```
+
+> Maven 的配置文件为 `pom.xml`，新手常用 IDEA/VS Code 自动生成项目即可。
+
 ---
 
 ### 1.3 安装开发工具
