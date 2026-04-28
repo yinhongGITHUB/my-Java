@@ -169,15 +169,32 @@ public class HelloWorld {
 
 Java 是**强类型语言**，变量必须声明类型。
 
-| 类型      | 说明         | 示例                  | 对应 JS 类型       |
-| --------- | ------------ | --------------------- | ------------------ |
-| `int`     | 整数         | `int age = 18;`       | `number`           |
-| `long`    | 长整数       | `long num = 100L;`    | `number`           |
-| `double`  | 浮点数       | `double pi = 3.14;`   | `number`           |
-| `float`   | 单精度浮点   | `float f = 1.5f;`     | `number`           |
-| `boolean` | 布尔值       | `boolean ok = true;`  | `boolean`          |
-| `char`    | 单个字符     | `char c = 'A';`       | `string`（单字符） |
-| `String`  | 字符串（类） | `String s = "hello";` | `string`           |
+| 类型      | 说明                 | 示例                  | 对应 JS 类型       |
+| --------- | -------------------- | --------------------- | ------------------ |
+| `int`     | 整数                 | `int age = 18;`       | `number`           |
+| `long`    | 长整数               | `long num = 100L;`    | `number`           |
+| `double`  | 浮点数（8 字节）     | `double pi = 3.14;`   | `number`           |
+| `float`   | 单精度浮点（4 字节） | `float f = 1.5f;`     | `number`           |
+| `boolean` | 布尔值               | `boolean ok = true;`  | `boolean`          |
+| `char`    | 单个字符             | `char c = 'A';`       | `string`（单字符） |
+| `String`  | 字符串（类）         | `String s = "hello";` | `string`           |
+
+```java
+
+总共约 6~7 位有效数字（不管小数点在哪里）,就开始不准了
+
+float f = 1234567.89f;
+System.out.println(f);   // 输出 1234568.0，从第7位开始就不准了
+
+float f2 = 0.123456789f;
+System.out.println(f2);  // 输出 0.12345679，同样约6~7位有效数字
+```
+
+单引号（'A'）用于表示char类型（单个字符），如：char c = 'A';
+双引号（"A"）用于表示String类型（字符串），如：String s = "A";
+**注意：**
+'A' 是字符（char），只能有一个字符
+"A" 是字符串（String），可以有0个、1个或多个字符
 
 ```java
 int age = 25;
